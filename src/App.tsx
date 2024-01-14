@@ -1,12 +1,13 @@
-import { Box, Typography } from "@mui/material"
+import { Box } from "@mui/material";
+import WebPage from "./pages/webpage";
 
 function App() {
 
   return (
     <Box>
-      <Typography variant="h1">Hello World</Typography>
+      <WebPage />
     </Box>
   )
 }
 
-export default App
+export default App;
