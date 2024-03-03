@@ -1,4 +1,3 @@
-
 // usuario
 export type Usuario = {
   idUsuario: string;
