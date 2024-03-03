@@ -5,7 +5,7 @@ import CardSobreNos from "./components/CardSobreNos";
 import Footer from "./components/Footer";
 
 
-const WebPage = () => {
+const Home = () => {
 
   return(
     <Box 
@@ -21,4 +21,4 @@ const WebPage = () => {
   )
 };
 
-export default WebPage;
+export default Home;
