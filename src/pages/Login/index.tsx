@@ -15,17 +15,14 @@ const Login = () => {
     errors,
     isSubmitting,
     onSubmitLogin,
-    detailsAlert,
-    setDetailsAlert,
     handleSubmit,
-    setValue,
   } = useLogin();
   
   return (
     <Box
         sx={{
           bgcolor: theme.palette.primary.main,
-          backgroundImage: `url(${images.rectangle})`,
+          backgroundImage: `url(${images.backgroundLoginPage})`,
           backgroundPositionX: "right",
           backgroundPositionY: "center",
           backgroundRepeat: "no-repeat",
