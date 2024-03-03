@@ -7,3 +7,9 @@ export type Usuario = {
   email: string;
   situacao: number;
 };
+
+export type PostLogin = {
+  token: string;
+  refreshToken: string;
+  usuario: Usuario;
+};

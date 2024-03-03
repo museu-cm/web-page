@@ -16,7 +16,10 @@ const theme = createTheme({
       100: "#F8F8F8",
       600: "#666666",
     },
-
+    yellow: {
+      main: "#FFD700",
+      200:  "#FEF5CD",
+    },
   },
 });
 
