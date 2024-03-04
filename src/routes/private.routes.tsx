@@ -1,10 +1,10 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import { Box, useTheme } from "@mui/material";
 import { clearSession, getSession } from "../services/session";
 import { clearUserLogged } from "../services/userInfo";
+import Dashboard from "../components/Navigation/Dashboard";
+import DashboardPage from "../pages/DashboardPage";
 
 const PrivateRoutes = () => {
-  const theme = useTheme();
   const session = getSession();
 
   if (!session?.accessToken) {
@@ -14,21 +14,23 @@ const PrivateRoutes = () => {
   }
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      component="main"
-      sx={{
-        bgcolor: theme.palette.grey[100],
-        height: "100%",
-      }}
-    >
-      {/* <AppBar /> */}
+    // <Box
+    //   display="flex"
+    //   flexDirection="column"
+    //   component="main"
+    //   sx={{
+    //     bgcolor: theme.palette.background.default,
+    //     height: "100%",
+    //   }}
+    // >
+    <Dashboard>
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
-    </Box>
+    </Dashboard>
+    // </Box>
   );
 };
 

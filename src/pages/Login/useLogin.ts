@@ -16,6 +16,8 @@ type DetailsAlert = {
 export default function useLogin() {
   const navigate = useNavigate();
 
+  const ambiente = import.meta.env.VITE_NODE_ENV;
+
   const {
     control,
     handleSubmit,
@@ -40,21 +42,35 @@ export default function useLogin() {
   const onSubmitLogin = async (values: ILoginDto) => {
     const {senha, email } = values;
     try {
-      const {
-        usuario: user,
-        refreshToken,
-        token,
-      } = await postLogin({
-        senha,
-        email,
-      });
-
-
+      
+      if(ambiente === "development"){
+        const user = {
+          id: 1,
+          nome: "Admin",
+          email: "teste@gmail.com",
+        };
         localStorage.setItem("@museu:user", JSON.stringify(user));
-        localStorage.setItem("@museu:keep-connected", "on");
-        saveSession(token, refreshToken, true);
+        saveSession("teste", "teste", true);
 
-      navigate("/painel-administrativo", {
+
+      } else{
+
+        const {
+          usuario: user,
+          refreshToken,
+          token,
+        } = await postLogin({
+          senha,
+          email,
+        });
+        
+        localStorage.setItem("@museu:user", JSON.stringify(user));
+        saveSession(token, refreshToken, true);
+      }
+
+        localStorage.setItem("@museu:keep-connected", "on");
+
+      navigate("/dashboard", {
         replace: true,
       });
     } catch (error) {

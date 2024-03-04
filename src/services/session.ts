@@ -1,8 +1,8 @@
 import { ISession } from "../@types/session";
 
-const storageAccessToken = "@web-coft-frotista:access_token";
-const storageRefreshToken = "@web-coft-frotista:refresh_token";
-const storageRemember = "@web-coft-frotista-frotista:remember";
+const storageAccessToken = "@museu:access_token";
+const storageRefreshToken = "@museu:refresh_token";
+const storageRemember = "@museu:remember";
 
 export function saveSession(
   accessToken: string,
@@ -51,7 +51,7 @@ export function getCookieRefreshToken() {
   cookies.forEach((cookie) => {
     const [name, value] = cookie.trim().split("=");
 
-    if (name === "web-coft-refresh-token") {
+    if (name === "museu-refresh-token") {
       refreshToken = decodeURIComponent(value);
     }
   });
@@ -66,7 +66,7 @@ export function getCookieRememberSession() {
   cookies.forEach((cookie) => {
     const [name, value] = cookie.trim().split("=");
 
-    if (name === "web-coft-remember") {
+    if (name === "museu-remember") {
       val = decodeURIComponent(value);
     }
   });
