@@ -17,6 +17,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { PropsWithChildren, useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AppBar from "../AppBar/index";
 import Accordion from "./components/Accordion";
 import * as S from "./styles";
@@ -25,6 +26,9 @@ const drawerWidth = 300;
 
 const Dashboard = ({ children }: PropsWithChildren) => {
   const theme = useTheme();
+
+  const navigate = useNavigate();
+
   const matches = useMediaQuery("(min-width:1320px)");
 
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -52,49 +56,49 @@ const Dashboard = ({ children }: PropsWithChildren) => {
     >
       <Accordion
         title="Dashboard"
-        onNavigate={onNavigate}
+        onNavigate={() => navigate("/dashboard", { replace: true })}
         icon={<DashboardOutlined />}
         as="button"
       />
       <Accordion
         title="Tags"
-        onNavigate={onNavigate}
+        onNavigate={() => navigate("/tags", { replace: true })}
         icon={<ListAlt />}
         as="button"
       />
       <Accordion
         title="Localização"
-        onNavigate={onNavigate}
+        onNavigate={() => navigate("/localizacao", { replace: true })}
         icon={<Room />}
         as="button"
       />
       <Accordion
         title="Acervo"
-        onNavigate={onNavigate}
+        onNavigate={() => navigate("/acervo", { replace: true })}
         icon={<InsertPhoto />}
         as="button"
       />
       <Accordion
         title="Coleções"
-        onNavigate={onNavigate}
+        onNavigate={() => navigate("/colecoes", { replace: true })}
         icon={<Assignment />}
         as="button"
       />
       <Accordion
         title="Solicitações"
-        onNavigate={onNavigate}
+        onNavigate={() => navigate("/solicitacoes", { replace: true })}
         icon={<Forum />}
         as="button"
       />
       <Accordion
         title="Usuários"
-        onNavigate={onNavigate}
+        onNavigate={() => navigate("/usuarios", { replace: true })}
         icon={<Group />}
         as="button"
       />
       <Accordion
         title="Administração"
-        onNavigate={onNavigate}
+        onNavigate={() => navigate("/administracao", { replace: true })}
         icon={<Domain />}
         as="button"
       />
