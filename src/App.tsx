@@ -1,13 +1,17 @@
-import { Box } from "@mui/material";
-import WebPage from "./pages/webpage";
+import CssBaseline from "@mui/material/CssBaseline";
+import Router from "./routes";
+import AppProvider from "./AppProvider";
+import { Alert } from "./components";
 
-function App() {
 
+const App = () => {
   return (
-    <Box>
-      <WebPage />
-    </Box>
-  )
-}
+      <AppProvider>
+        <CssBaseline />
+        <Router />
+        <Alert />
+      </AppProvider>
+  );
+};
 
 export default App;
