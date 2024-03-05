@@ -3,6 +3,7 @@ import { clearSession, getSession } from "../services/session";
 import { clearUserLogged } from "../services/userInfo";
 import Dashboard from "../components/Navigation/Dashboard";
 import DashboardPage from "../pages/DashboardPage";
+import ListTags from "../pages/Tags/ListTags";
 
 const PrivateRoutes = () => {
   const session = getSession();
@@ -26,6 +27,7 @@ const PrivateRoutes = () => {
     <Dashboard>
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/tags" element={<ListTags />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
