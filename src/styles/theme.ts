@@ -25,6 +25,7 @@ const theme = createTheme({
       900: "#FCD212",
       200:  "#FEF5CD",
     },
+    white: "#FFFFFF",
   },
 });
 

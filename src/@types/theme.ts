@@ -5,13 +5,16 @@ declare module "@mui/material/styles" {
       900: string;
       200: string;
     };
+    white: string;
   }
   interface PaletteOptions {
     yellow?: {
       main?: string;
       900?: string;
-      200?: string;
+      200?: string
+      ;
     };
+    white?: string;
   }
 }
 
